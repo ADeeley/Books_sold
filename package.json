@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ADeeley/vanilla_skeleton#readme",
   "dependencies": {
     "browserify": "^14.5.0",
+    "d3": "^4.12.2",
     "eslint": "^4.13.1",
     "watchify": "^3.9.0"
   },
