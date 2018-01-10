@@ -5,4 +5,8 @@ h1 {
 point {
   fill: black;
 }
+
+.chart {
+  border: 2px solid black;
+}
 /*# sourceMappingURL=style.css.map */
