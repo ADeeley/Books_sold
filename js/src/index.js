@@ -2,7 +2,7 @@ window.onload = function() {
     // Promises?...
     d3.json('data/authors.json', function(data) {
         let margin = {top: 50, right: 20, 
-                      bottom: 50, left: 70}
+                      bottom: 80, left: 70}
 
         let radius = 5,
             width = 800,
@@ -53,7 +53,7 @@ window.onload = function() {
                 tooltip.transition()
                     .duration(200)
                     .style("opacity", 0.9)
-                tooltip.html(author + '<br>Books sold:' + d[2]
+                tooltip.html(author + '<br>Books sold (min):' + d[1]
                              + '<br>Books written: ' + d[5])
                     .style('left', d3.event.pageX + 10)
                     .style('top', d3.event.pageY - 50)
@@ -75,16 +75,26 @@ window.onload = function() {
 
         chart.append('text')
             .attr('x', margin.left + width / 2)
-            .attr('y', margin.top / 2)
+            .attr('y', margin.top / 2 + 20)
             .attr('class', 'textLarge')
             .text('Books sold compared with the number of books written');
 
         chart.append('text')
             .attr('x', margin.left + width / 2)
-            .attr('y', outerHeight - 10)
+            .attr('y', outerHeight - 40)
             .attr('class', 'textMedium')
             .text('Books Written')
 
+        chart.append('text')
+            .attr('x', margin.left + width / 2)
+            .attr('y', outerHeight -24)
+            .attr('class', 'textSmall')
+            .text('Data based on the minimum number of books sold.') 
+        chart.append('text')
+            .attr('x', margin.left + width / 2)
+            .attr('y', outerHeight -10)
+            .attr('class', 'textSmall')
+            .text('Sourced from www.en.wikipedia.org/wiki/List_of_best-selling_fiction_authors')
         chart.append('text')
             .attr('transform', 'rotate(-90)')
             .attr('x', 0 - (margin.top + height / 2))
