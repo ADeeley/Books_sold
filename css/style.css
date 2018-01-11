@@ -11,19 +11,25 @@ h1 {
   border: 2px solid black;
   box-shadow: 5px 5px 3px grey; }
 
-.textMedium, .textLarge, .tooltip {
+.textMedium, .textLarge, .textSmall, .tooltip {
   text-anchor: middle;
   fill: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px; }
 
 .textLarge {
-  font-size: 26px; }
+  font-size: 30px; }
+
+.textSmall, .tooltip {
+  font-size: 14px; }
 
 .tooltip {
   position: absolute;
-  text-align: center;
   padding: 2px;
+  border-radius: 3px;
+  font-style: italic;
+  text-align: center;
+  color: white;
   background: slateblue;
   pointer-events: none; }
 

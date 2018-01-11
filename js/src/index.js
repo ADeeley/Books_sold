@@ -49,11 +49,12 @@ window.onload = function() {
             })
             .attr('r', radius)
             .on('mouseover', (d) => {
-                let author = d[0];
+                let author = d[0].slice(1 + d[0].length / 2);
                 tooltip.transition()
                     .duration(200)
                     .style("opacity", 0.9)
-                tooltip.html(author)
+                tooltip.html(author + '<br>Books sold:' + d[2]
+                             + '<br>Books written: ' + d[5])
                     .style('left', d3.event.pageX + 10)
                     .style('top', d3.event.pageY - 50)
             })

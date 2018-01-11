@@ -24,14 +24,22 @@ h1 {
 
 .textLarge {
     @extend .textMedium;
-    font-size: 26px;
+    font-size: 30px;
+}
+
+.textSmall {
+    @extend .textMedium;
+    font-size: 14px;
 }
 
 .tooltip {
-    @extend .textMedium;
+    @extend .textSmall;
     position: absolute;
-    text-align: center;
     padding: 2px;
+    border-radius: 3px;
+    font-style: italic;
+    text-align: center;
+    color: white;
     background: slateblue;
     pointer-events: none;
 }
