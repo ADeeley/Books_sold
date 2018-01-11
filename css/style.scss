@@ -1,3 +1,43 @@
 h1 {
-    font-size: 2em;
+    font-size: 2em; 
 }
+
+.point {
+    fill: lightgreen;
+}
+
+.container {
+    text-align: center;
+}
+
+.chart {
+    border: 2px solid black;
+    box-shadow: 5px 5px 3px grey;
+}
+
+.textMedium {
+    text-anchor: middle;
+    fill: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.textLarge {
+    @extend .textMedium;
+    font-size: 26px;
+}
+
+.tooltip {
+    @extend .textMedium;
+    position: absolute;
+    text-align: center;
+    padding: 2px;
+    background: slateblue;
+    pointer-events: none;
+}
+
+.mouse_over {
+    fill: darkblue;
+}
+
+/*# sourceMappingURL=style.css.map */

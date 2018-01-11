@@ -18,6 +18,7 @@ window.onload = function() {
 
             console.log('upper X: ' + upperXLimit)
             console.log('upper Y: ' + upperYLimit)
+
         let x = d3.scaleLinear()
             .domain([0, upperXLimit])
             .range([0, width]);
@@ -30,6 +31,10 @@ window.onload = function() {
         let chart = d3.select('.chart')
             .attr('width', outerWidth)
             .attr('height', outerHeight)
+        
+        let tooltip = d3.select('.container').append('div')
+            .attr('class', 'tooltip')
+            .style('opacity', 0)
 
         let circle = chart.selectAll('circle')
             .data(data)
@@ -39,10 +44,25 @@ window.onload = function() {
             .attr('cy', (d) => {
                 let booksSold = parseInt(d[1]),
                     cy = d[1].match(/billion/) ? y(booksSold * 1000) : y(booksSold);
-                return margin.top + cy;
 
+                return margin.top + cy;
             })
             .attr('r', radius)
+            .on('mouseover', (d) => {
+                let author = d[0];
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", 0.9)
+                tooltip.html(author)
+                    .style('left', d3.event.pageX + 10)
+                    .style('top', d3.event.pageY - 50)
+            })
+            .on('mouseout', (d) => {
+                let author = d[0];
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", 0)
+            })
 
         chart.append('g') 
             .attr('transform', 'translate(' + margin.left + ',' + (height + margin.top) + ')')
