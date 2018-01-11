@@ -90,11 +90,13 @@ window.onload = function() {
             .attr('y', outerHeight -24)
             .attr('class', 'textSmall')
             .text('Data based on the minimum number of books sold.') 
+
         chart.append('text')
             .attr('x', margin.left + width / 2)
             .attr('y', outerHeight -10)
             .attr('class', 'textSmall')
             .text('Sourced from www.en.wikipedia.org/wiki/List_of_best-selling_fiction_authors')
+
         chart.append('text')
             .attr('transform', 'rotate(-90)')
             .attr('x', 0 - (margin.top + height / 2))
