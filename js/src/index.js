@@ -1,7 +1,7 @@
 window.onload = function() {
     // Promises?...
     d3.json('data/authors.json', function(data) {
-        let margin = {top: 50, right: 20, 
+        let margin = {top: 30, right: 20, 
                       bottom: 80, left: 70}
 
         let radius = 5,
@@ -72,12 +72,6 @@ window.onload = function() {
         chart.append('g') 
             .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
             .call(d3.axisLeft(y))
-
-        chart.append('text')
-            .attr('x', margin.left + width / 2)
-            .attr('y', margin.top / 2 + 20)
-            .attr('class', 'textLarge')
-            .text('Books sold compared with the number of books written');
 
         chart.append('text')
             .attr('x', margin.left + width / 2)
